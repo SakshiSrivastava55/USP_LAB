@@ -13,7 +13,7 @@ echo Enter your choice
 read choice 
 case $choice in 
         1)echo Addition       : $(expr $a + $b);; 
-        2)echo Suubtraction   : $(expr $a - $b);; 
+        2)echo Subtraction   : $(expr $a - $b);; 
         3)echo Multiplication : $(expr $a \* $b);; 
         4)echo Division       : $(expr $a / $b);; 
         5)echo Modules        : $(expr $a % $b);; 
