@@ -1,24 +1,26 @@
-echo "\n--------------------STUDENT MARKS--------------------\n"
+echo "Enter name: "
+read name
+echo "Enter three subject marks: "
+read m1
+read m2
+read m3
 
-read -p "Enter Student Name : " name
-echo "Enter 3 subject marks of $name :"
-read m1 m2 m3
-sum1=`expr $m1 + $m2 + $m3`
-echo "\nTotal Score out of 300 : " $sum1
-per=`expr $sum1 / 3`
-echo "Total Percentage: $per% "
-if [ $per -ge 90 ]
+total=$(echo "$m1+$m2+$m3"|bc)
+avg=$(echo "$total/3"|bc)
+
+echo "Student name: "$name
+echo "Total= "$total
+echo "Average= "$avg
+
+if [ $avg -gt 85 ]
 then
-echo "S Grade"
-elif [ $per -ge 75 ]
+	echo "Distinction" 
+elif [ $avg -gt 50 ]
 then
-echo "A Grade"
-elif [ $per -ge  60 ]
-then
-echo "B Grade"
-elif [ $per -le  40 ]
-then
-echo "Fail"
+	echo "First Class"
+elif [ $avg -gt 35 ]
+then 
+	echo "Second Class"
 else
-echo "C Grade"
+	echo "Fail"
 fi
